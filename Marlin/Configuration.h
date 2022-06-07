@@ -37,6 +37,8 @@
  */
 #define CONFIGURATION_H_VERSION 02010000
 
+#define Z_PROBE_PAUSE_INTERVAL_MS 500 //pauses after XY moved before probing see also src/module/probe.cpp line 645...
+
 //===========================================================================
 //============================= Getting Started =============================
 //===========================================================================
