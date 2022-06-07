@@ -640,6 +640,17 @@ float Probe::run_z_probe(const bool sanity_check/*=true*/) {
     // Tare the probe, if supported
     if (TERN0(PROBE_TARE, tare())) return true;
 
+    // Probe pausing acc. to comment on Thingiverse for Orion Piezo Probe
+    #ifdef Z_PROBE_PAUSE_INTERVAL_MS
+    if (Z_PROBE_PAUSE_INTERVAL_MS > 0)
+    {
+    millis_t time = millis() + Z_PROBE_PAUSE_INTERVAL_MS;
+    while (millis() < time)
+    idle();
+    }
+    #endif // Z_PROBE_PAUSE_INTERVAL_MS
+
+
     // Do a first probe at the fast speed
     const bool probe_fail = probe_down_to_z(z_probe_low_point, fr_mm_s),            // No probe trigger?
                early_fail = (scheck && current_position.z > -offset.z + clearance); // Probe triggered too high?
