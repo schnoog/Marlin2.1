@@ -122,6 +122,8 @@
 #define FAN_PIN                             PA8
 #define HEATER_BED_PIN                      PC8
 
+#define FAN1_PIN   PC4  //Open: M106 P1 S255, Close: M107
+#define FAN2_PIN   PC5  //Open: M106 P2 S255, Close: M107
 //
 // Temperature Sensors
 //
