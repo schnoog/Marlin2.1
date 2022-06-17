@@ -980,7 +980,7 @@
 //
 // Add the G35 command to read bed corners to help adjust screws. Requires a bed probe.
 //
-#define ASSISTED_TRAMMING
+//#define ASSISTED_TRAMMING
 #if ENABLED(ASSISTED_TRAMMING)
 
   // Define positions for probe points.
@@ -1637,7 +1637,7 @@
    *
    * :[ 'LCD', 'ONBOARD', 'CUSTOM_CABLE' ]
    */
-  //#define SDCARD_CONNECTION LCD
+  #define SDCARD_CONNECTION ONBOARD
 
   // Enable if SD detect is rendered useless (e.g., by using an SD extender)
   //#define NO_SD_DETECT
@@ -2219,7 +2219,7 @@
  * and optionally G38.4 and G38.5 (probe away from target).
  * Set MULTIPLE_PROBING for G38 to probe more than once.
  */
-#define G38_PROBE_TARGET
+//#define G38_PROBE_TARGET
 #if ENABLED(G38_PROBE_TARGET)
   //#define G38_PROBE_AWAY        // Include G38.4 and G38.5 to probe away from target
   #define G38_MINIMUM_MOVE 0.0275 // (mm) Minimum distance that will produce a move.
